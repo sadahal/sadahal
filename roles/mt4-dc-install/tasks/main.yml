@@ -1,0 +1,22 @@
+---
+# tasks file for mt4-dc-install
+- name: Copy the installer to temp dir 
+  win_copy:
+    src: files/
+    dest: "C:\\Windows\\Temp"
+
+- name: Install Mt4-DC server 
+  win_package:
+    path: "C:\\Windows\\Temp\\mtdcsetup.exe"
+    creates_path: "C:\\Program Files (x86)\\MetaTrader Data Center" 
+    state: present
+
+- name: Create the config file for Mt4-DC
+  win_template:
+    src: '../templates/mt4-dc.conf.j2'
+    dest: 'C:\\Program Files (x86)\\MetaTrader Data Center\\config\\config.ini'
+
+- name: restart the mt4 service 
+  win_service:
+    name: mtdcsrv
+    state: restarted

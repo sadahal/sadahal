@@ -1,0 +1,7 @@
+---
+- name: Installing mt4-dc in WIndows server
+  hosts: all
+  vars_files: 
+    - './mt4-dc.yaml'
+  roles:
+    - ../roles/mt4-dc-install

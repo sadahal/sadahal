@@ -1,0 +1,15 @@
+dc_user: "test_user"
+dc_password: "testpass"
+failover_server : "0.0.0.0:443"
+service_name: "mtdcsrv"
+mt4_group: "MetaTrader Data Center"
+mt4_description: "MetaTrader Data Center"
+local_server: "0.0.0.0:443"
+parent_server: ""
+antiflood_allow: 1
+antiflood_max: 150
+block_count: 50
+block_period: 600
+internal_ip: 0.0.0.0
+version: 400
+build: 1330

@@ -1,0 +1,9 @@
+[windows]
+123.56.228.85
+[windows:vars]
+ansible_user=administrator
+ansible_password=xxxxxxx
+ansible_port=5986
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
